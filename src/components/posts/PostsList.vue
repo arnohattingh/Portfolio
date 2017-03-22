@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="post in posts">
+    <div v-for="post in posts.reverse()">
       <h1>{{ post.title }}</h1>
       <strong>{{ post.id }} - {{ post.desc }}</strong>
     </div>
@@ -27,5 +27,4 @@ export default {
     posts: postsRef
   }
 }
-
 </script>
