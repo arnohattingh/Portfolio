@@ -3,6 +3,7 @@
     <div v-for="post in posts.reverse()">
       <h1>{{ post.title }}</h1>
       <strong>{{ post.id }} - {{ post.desc }}</strong>
+      <router-link :to="'/posts/' + post.id">Post {{ post.id }}</router-link>
     </div>
   </div>
 </template>
@@ -25,6 +26,11 @@ let postsRef = db.ref('posts')
 export default {
   firebase: {
     posts: postsRef
+  },
+  method: {
+    post: postsRef.orderByChild('id').equalTo(1).on('value', function (snapshot) {
+      console.log(snapshot)
+    })
   }
 }
 </script>
