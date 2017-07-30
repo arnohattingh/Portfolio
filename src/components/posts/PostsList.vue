@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Firebase from 'firebase'
+import firebase from 'firebase'
 
 let firebaseConfig = {
   apiKey: 'AIzaSyBLqSTbFW7W9x2uPcGCsQC1MCfhQZUIu68',
@@ -19,7 +19,7 @@ let firebaseConfig = {
   messagingSenderId: '738113106641'
 }
 
-let app = Firebase.initializeApp(firebaseConfig)
+let app = firebase.initializeApp(firebaseConfig)
 let db = app.database()
 let postsRef = db.ref('posts')
 
